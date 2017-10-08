@@ -4,29 +4,48 @@ import Api from "./Api";
 class Home extends Component {
   constructor() {
     super();
-    this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.signIn = this.signIn.bind(this);
+    this.signUp = this.signUp.bind(this);
     this.api = new Api();
     this.state = {
-      userId: ""
+      username: "",
+      password: "",
     }
   }
-  handleClick() {
-    const userId = this.state.userId;
-    this.api.login(userId).then((res) => {
-      console.log("[Api: Login]", res);
+
+  signIn() {
+    const { username, password } = this.state;
+    this.api.signIn(username, password).then((res) => {
+      console.log("[Api: SignIn]", res);
       this.props.history.push("/lesson");
+    }).catch((err) => {
+      alert("Failed sign in");
     });
   }
+
+  signUp() {
+    const { username, password } = this.state;
+    this.api.signUp(username, password).then((res) => {
+      console.log("[Api: SignUp]", res);
+      this.props.history.push("/lesson");
+    }).catch((err) => {
+      alert("Failed sign up");
+    });;
+  }
+
   handleChange(event) {
-    this.setState({ userId: event.target.value });
+    let name = event.target.name;
+    this.setState({ [name]: event.target.value });
   }
   render() {
     return (
       <div className="Home">
         <h2>Home</h2>
-        <input type="text" value={this.state.userId} onChange={this.handleChange} />
-        <button onClick={this.handleClick}>GoLessonList</button>
+        <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
+        <input type="text" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+        <button onClick={this.signIn}>SignIn</button>
+        <button onClick={this.signUp}>SignUp</button>
       </div>
     );
   }
