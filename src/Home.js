@@ -11,6 +11,7 @@ class Home extends Component {
     this.state = {
       username: "",
       password: "",
+      isShowingLoginFailed: false
     }
   }
 
@@ -18,9 +19,10 @@ class Home extends Component {
     const { username, password } = this.state;
     this.api.signIn(username, password).then((res) => {
       console.log("[Api: SignIn]", res);
+      localStorage.setItem("token", res.data.token);
       this.props.history.push("/lesson");
     }).catch((err) => {
-      alert("Failed sign in");
+      this.setState({ isShowingLoginFailed: true });
     });
   }
 
@@ -28,6 +30,7 @@ class Home extends Component {
     const { username, password } = this.state;
     this.api.signUp(username, password).then((res) => {
       console.log("[Api: SignUp]", res);
+      localStorage.setItem("token", res.data.token);
       this.props.history.push("/lesson");
     }).catch((err) => {
       alert("Failed sign up");
@@ -46,9 +49,18 @@ class Home extends Component {
         <input type="text" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
         <button onClick={this.signIn}>SignIn</button>
         <button onClick={this.signUp}>SignUp</button>
+        <LoginFailed isShowing={this.state.isShowingLoginFailed} />
       </div>
     );
   }
 }
+
+const LoginFailed = ({ isShowing }) => {
+  return (isShowing && (
+    <div className="loginFailed">
+      ユーザー名またはパスワードが間違っています
+    </div>
+  ));
+};
 
 export default Home;

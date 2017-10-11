@@ -4,6 +4,8 @@ export default class Api {
   constructor() {
     this.baseUrl = "http://127.0.0.1";
     this.port = 4000;
+    // axios.defaults.withCredentials = true; // クッキー情報のやりとりを許可
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
   }
 
   handleError(e) {
@@ -13,12 +15,9 @@ export default class Api {
 
   signIn(username, password) {
     return axios
-      .post(`${this.baseUrl}:${this.port}/users/login`, { username, password })
+      .post(`${this.baseUrl}:${this.port}/login`, { username, password })
       .then(res => {
-        console.log("error in api")
-        return {
-          res: res || []
-        };
+        return res;
       })
       .catch(this.handleError);
   }
@@ -27,10 +26,16 @@ export default class Api {
     return axios
       .post(`${this.baseUrl}:${this.port}/users`, { username, password })
       .then(res => {
-        return {
-          res: res || []
-        };
+        return res
       })
       .catch(this.handleError);
+  }
+
+  getUsers() {
+    return axios
+      .get(`${this.baseUrl}:${this.port}/users`)
+      .then(res => {
+        return res
+      })
   }
 }
