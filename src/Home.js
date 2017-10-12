@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Api from "./Api";
+import "./Home.css";
 
 class Home extends Component {
   constructor() {
@@ -31,6 +32,7 @@ class Home extends Component {
     this.api.signUp(username, password).then((res) => {
       console.log("[Api: SignUp]", res);
       localStorage.setItem("token", res.data.token);
+
       this.props.history.push("/lesson");
     }).catch((err) => {
       alert("Failed sign up");
@@ -47,8 +49,8 @@ class Home extends Component {
         <h2>Home</h2>
         <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
         <input type="text" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-        <button onClick={this.signIn}>SignIn</button>
-        <button onClick={this.signUp}>SignUp</button>
+        <button className="btn btn-primary" onClick={this.signIn}>SignIn</button>
+        <button className="btn btn-primary" onClick={this.signUp}>SignUp</button>
         <LoginFailed isShowing={this.state.isShowingLoginFailed} />
       </div>
     );
@@ -57,7 +59,7 @@ class Home extends Component {
 
 const LoginFailed = ({ isShowing }) => {
   return (isShowing && (
-    <div className="loginFailed">
+    <div className="LoginFailed alert alert-danger">
       ユーザー名またはパスワードが間違っています
     </div>
   ));

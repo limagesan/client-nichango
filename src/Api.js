@@ -4,7 +4,6 @@ export default class Api {
   constructor() {
     this.baseUrl = "http://127.0.0.1";
     this.port = 4000;
-    // axios.defaults.withCredentials = true; // クッキー情報のやりとりを許可
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
   }
 
@@ -37,5 +36,6 @@ export default class Api {
       .then(res => {
         return res
       })
+      .catch(this.handleError);
   }
 }
