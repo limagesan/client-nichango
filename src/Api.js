@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class Api {
   constructor() {
-    this.baseUrl = "http://127.0.0.1";
+    this.baseUrl = "https://localhost";
     this.port = 4000;
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
   }
