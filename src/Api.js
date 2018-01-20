@@ -4,7 +4,9 @@ export default class Api {
   constructor() {
     this.baseUrl = "https://localhost";
     this.port = 4000;
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+
+    // this.baseUrl = "https://jobhub2017.herokuapp.com";
+    // this.port = 443;
   }
 
   handleError(e) {
@@ -12,29 +14,20 @@ export default class Api {
     return Promise.reject(e);
   }
 
-  signIn(username, password) {
+  createRoom() {
     return axios
-      .post(`${this.baseUrl}:${this.port}/login`, { username, password })
+      .post(`${this.baseUrl}:${this.port}/room`)
       .then(res => {
         return res;
       })
       .catch(this.handleError);
   }
 
-  signUp(username, password) {
+  getTexts(roomId) {
     return axios
-      .post(`${this.baseUrl}:${this.port}/users`, { username, password })
+      .get(`${this.baseUrl}:${this.port}/room/${roomId}`)
       .then(res => {
-        return res
-      })
-      .catch(this.handleError);
-  }
-
-  getUsers() {
-    return axios
-      .get(`${this.baseUrl}:${this.port}/users`)
-      .then(res => {
-        return res
+        return res;
       })
       .catch(this.handleError);
   }
