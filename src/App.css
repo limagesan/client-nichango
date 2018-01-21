@@ -2,27 +2,189 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+html {
+  background-color: #f8f8f8;
+  margin: 0;
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+    "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+body {
+  width: 375px;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.clear {
+  clear: left;
 }
 
-.App-intro {
-  font-size: large;
+.logo {
+  width: 240px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.img-wrapper {
+  width: 240px;
+  margin: 0 auto;
 }
+
+.explain-name {
+  text-align: center;
+  margin-top: 160px;
+}
+
+.explain {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  width: 220px;
+  height: 45px;
+  margin: 0 auto;
+  border-radius: 45px;
+  background-color: #29abe2;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 3px 3px 10px #999;
+}
+
+.start {
+  margin-top: 100px;
+}
+
+.theme {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 50px;
+}
+
+.theme-name-wrapper {
+  width: 270px;
+  margin: 0 auto;
+}
+
+.theme-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  float: left;
+}
+
+.refresh {
+  position: relative;
+  top: 7px;
+  width: 25px;
+  margin-left: 20px;
+}
+
+.submit-theme {
+  margin-top: 140px;
+}
+
+.made-sub {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 80px;
+}
+
+.theme-wrapper {
+  border: 3px solid #29abe2;
+  background-color: #fff;
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+}
+
+.theme-blue {
+  font-size: 13px;
+  color: #29abe2;
+}
+
+.made-theme {
+  color: #29abe2;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.white-button {
+  width: 240px;
+  height: 45px;
+  margin: 0 auto;
+  border-radius: 45px;
+  border: 2px solid #29abe2;
+  background-color: #fff;
+  line-height: 45px;
+  text-align: center;
+  color: #29abe2;
+  box-shadow: 3px 3px 10px #999;
+}
+
+.link-twitter {
+  margin-top: 60px;
+}
+
+.theme-timeline {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.comment {
+  width: 240px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background-color: #fff;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  box-shadow: 3px 3px 10px #999;
+}
+
+.text-wrapper {
+  width: 375px;
+  background-color: #29abe2;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+}
+
+.text-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 40px;
+}
+
+/*.text-box-typing{
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 40px;
+  float: left;
+}
+.submit-text{
+  width: 80px;
+  height: 35px;
+  border: 3px solid #fff;
+  color: #ffffff;
+  line-height: 35px;
+}*/
