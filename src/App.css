@@ -44,7 +44,7 @@ a {
 
 .explain-name {
   text-align: center;
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 .explain {
@@ -90,9 +90,9 @@ a {
 
 .refresh {
   position: relative;
-  top: 7px;
+  margin-top: 5px;
   width: 25px;
-  margin-left: 20px;
+  margin: 0 auto;
 }
 
 .submit-theme {
@@ -114,6 +114,7 @@ a {
   text-align: center;
   padding: 30px;
   margin-top: 50px;
+  margin-bottom: 5px;
 }
 
 .theme-blue {
@@ -156,7 +157,7 @@ a {
 }
 
 .link-twitter {
-  margin-top: 50px;
+  margin-top: 45px;
 }
 
 .link-line {

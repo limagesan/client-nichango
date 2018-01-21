@@ -156,7 +156,7 @@ const Step3 = ({ title, url }) => {
         <div className="link-twitter white-button">リンクをツイートするンゴ</div>
       </a>
       <a href={`https://line.me/R/msg/text/?${lineText}`}>
-        <div className="link-line green-button">リンクをLINEのトークに送るンゴ</div>
+        <div className="link-line green-button">リンクをLINEで送るンゴ</div>
       </a>
     </body>
   );
