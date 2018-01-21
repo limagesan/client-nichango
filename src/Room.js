@@ -64,7 +64,7 @@ class Room extends Component {
             <div className="col1">
               <input
                 className="question-input"
-                maxLength="20"
+                maxLength="15"
                 type="text"
                 name="question"
                 value={this.state.textValue}

@@ -92,8 +92,8 @@ a {
   margin-top: 10px;
 }
 .link-wrapper {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .urllink {
@@ -169,7 +169,7 @@ a {
 }
 
 .link-twitter {
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
 .link-line {
@@ -185,7 +185,7 @@ a {
 }
 
 .comment {
-  width: 240px;
+  width: 260px;
   height: 40px;
   margin: 0 auto;
   border-radius: 40px;
