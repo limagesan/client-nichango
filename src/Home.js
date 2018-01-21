@@ -88,7 +88,7 @@ const Step1 = ({ clickNext }) => (
     <div className="explain">
       面白いテーマを決めて<br />匿名で投稿するだけで<br />お金がもらえるSNSンゴ
     </div>
-    <div className="start button" onClick={clickNext}>
+    <div className="start blue-button" onClick={clickNext}>
       にちゃンゴする
     </div>
   </div>
@@ -111,7 +111,7 @@ const Step2 = ({ getTitle, clickNext, title }) => (
       </div>
       <div className="clear" />
     </div>
-    <div className="submit-theme button" onClick={clickNext}>
+    <div className="submit-theme blue-button" onClick={clickNext}>
       決めたンゴ
     </div>
   </div>
@@ -136,7 +136,9 @@ const Step3 = ({ tweetLink, title, url }) => {
         <div className="theme-blue">テーマ</div>
         <div className="made-theme">{title}</div>
       </div>
-      <div className="theme-blue">{url && window.location.host + url}</div>
+      <a href={url} className="theme-blue">
+        {url && window.location.host + url}
+      </a>
       <a href={`https://twitter.com/intent/tweet?text=${tweetText}`}>
         <div className="link-twitter white-button" onClick={tweetLink}>
           リンクをツイートするンゴ
