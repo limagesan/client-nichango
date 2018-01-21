@@ -7,13 +7,16 @@ class Home extends Component {
   constructor() {
     super();
     this.getTitle = this.getTitle.bind(this);
+    this.reGetTitle = this.reGetTitle.bind(this);
+
     this.createRoom = this.createRoom.bind(this);
     this.api = new Api();
     this.state = {
       title: "",
       url: "",
       step: 1,
-      isShowLoading: false
+      isShowLoading: false,
+      isRotate: false
     };
     this.goStep2 = this.goStep2.bind(this);
     this.goStep3 = this.goStep3.bind(this);
@@ -26,6 +29,15 @@ class Home extends Component {
     });
   }
 
+  reGetTitle() {
+    this.setState({ isRotate: true });
+    this.api.getTitle().then(res => {
+      this.setState({ isRotate: false });
+
+      console.log("gettitle", res);
+      this.setState({ title: res.data.title });
+    });
+  }
   goStep2() {
     console.log("yoba");
     this.getTitle();
@@ -59,9 +71,10 @@ class Home extends Component {
     if (this.state.step == 2) {
       element = (
         <Step2
-          getTitle={this.getTitle}
+          getTitle={this.reGetTitle}
           clickNext={this.goStep3}
           title={this.state.title}
+          isRotate={this.state.isRotate}
         />
       );
     } else if (this.state.step == 3) {
@@ -94,28 +107,34 @@ const Step1 = ({ clickNext }) => (
   </div>
 );
 
-const Step2 = ({ getTitle, clickNext, title }) => (
-  <div>
-    <div className="img-wrapper">
-      <img src="img/logo-2ch_ngo-02.png" className="logo" />
-    </div>
-    <div className="theme">テーマ</div>
-    <div className="theme-name-wrapper">
-      <div className="theme-name">{title}</div>
-      <div className="change">
-        <img
-          src="img/refresh-button.png"
-          className="refresh"
-          onClick={getTitle}
-        />
+const Step2 = ({ getTitle, clickNext, title, isRotate }) => {
+  let imgClass = "refresh";
+  if (isRotate) {
+    imgClass = "refresh rotate-anime";
+  }
+  return (
+    <div>
+      <div className="img-wrapper">
+        <img src="img/logo-2ch_ngo-02.png" className="logo" />
       </div>
-      <div className="clear" />
+      <div className="theme">テーマ</div>
+      <div className="theme-name-wrapper">
+        <div className="theme-name">{title}</div>
+        <div className="change">
+          <img
+            src="img/refresh-button.png"
+            className={imgClass}
+            onClick={getTitle}
+          />
+        </div>
+        <div className="clear" />
+      </div>
+      <div className="submit-theme blue-button" onClick={clickNext}>
+        決めたンゴ
+      </div>
     </div>
-    <div className="submit-theme blue-button" onClick={clickNext}>
-      決めたンゴ
-    </div>
-  </div>
-);
+  );
+};
 
 const Step3 = ({ tweetLink, title, url }) => {
   const tweetText =
@@ -137,7 +156,7 @@ const Step3 = ({ tweetLink, title, url }) => {
         <div className="made-theme">{title}</div>
       </div>
       <a href={url} className="theme-blue">
-        {url && window.location.host + url}
+        {"https://" + url && window.location.host + url}
       </a>
       <a href={`https://twitter.com/intent/tweet?text=${tweetText}`}>
         <div className="link-twitter white-button" onClick={tweetLink}>

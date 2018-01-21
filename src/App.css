@@ -234,6 +234,19 @@ a {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+.rotate-anime {
+  animation: rotate-anime 3s linear infinite;
+}
+
+@keyframes rotate-anime {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
 /*.text-box-typing{
   width: 300px;
   height: 40px;
