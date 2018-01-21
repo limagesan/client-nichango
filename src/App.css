@@ -79,18 +79,30 @@ a {
 .theme-name-wrapper {
   width: 270px;
   margin: 0 auto;
+  height: 130px;
 }
 
 .theme-name {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
-  float: left;
 }
 
+.change {
+  margin-top: 10px;
+}
+.link-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.urllink {
+  overflow: hidden;
+  word-break: break-all;
+}
 .refresh {
   position: relative;
-  margin-top: 5px;
+  margin-top: 15px;
   width: 25px;
   margin: 0 auto;
 }

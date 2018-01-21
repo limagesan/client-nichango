@@ -149,9 +149,12 @@ const Step3 = ({ title, url }) => {
         <div className="theme-blue">テーマ</div>
         <div className="made-theme">{title}</div>
       </div>
-      <a href={url} className="theme-blue">
-        {url && "https://" + window.location.host + url}
-      </a>
+      <div className="link-wrapper">
+        <a href={url} className="urllink theme-blue">
+          {url && "https://" + window.location.host + url}
+        </a>
+      </div>
+
       <a href={`https://twitter.com/intent/tweet?text=${tweetText}`}>
         <div className="link-twitter white-button">リンクをツイートするンゴ</div>
       </a>
