@@ -103,7 +103,7 @@ a {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .theme-wrapper {
@@ -113,7 +113,7 @@ a {
   margin: 0 auto;
   text-align: center;
   padding: 30px;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .theme-blue {
@@ -140,8 +140,27 @@ a {
   box-shadow: 3px 3px 10px #999;
 }
 
+.green-button {
+  width: 240px;
+  height: 45px;
+  margin: 0 auto;
+  border-radius: 45px;
+  border: 2px solid #1cbc20;
+
+  background-color: #fff;
+  line-height: 45px;
+  text-align: center;
+  color: #1cbc20;
+
+  box-shadow: 3px 3px 10px #999;
+}
+
 .link-twitter {
-  margin-top: 60px;
+  margin-top: 50px;
+}
+
+.link-line {
+  margin-top: 20px;
 }
 
 .theme-timeline {

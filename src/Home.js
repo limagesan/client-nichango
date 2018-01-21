@@ -63,9 +63,6 @@ class Home extends Component {
         alert("Failed sign up");
       });
   }
-
-  tweetLink() {}
-
   render() {
     let element = <Step1 clickNext={this.goStep2} />;
     if (this.state.step == 2) {
@@ -78,13 +75,7 @@ class Home extends Component {
         />
       );
     } else if (this.state.step == 3) {
-      element = (
-        <Step3
-          tweetLink={this.tweetLink}
-          title={this.state.title}
-          url={this.state.url}
-        />
-      );
+      element = <Step3 title={this.state.title} url={this.state.url} />;
     }
     return <div className="Home">{element}</div>;
   }
@@ -136,15 +127,18 @@ const Step2 = ({ getTitle, clickNext, title, isRotate }) => {
   );
 };
 
-const Step3 = ({ tweetLink, title, url }) => {
+const Step3 = ({ title, url }) => {
   const tweetText =
     "「" +
     title +
     "」" +
-    "のスレが始まったンゴ " +
+    "のスレが始まったンゴ https://" +
     window.location.host +
     url +
     " %23にちゃンゴ";
+
+  const lineText =
+    "「" + title + "」" + "のスレが始まったンゴ https://" + window.location.host + url;
   return (
     <body>
       <div className="img-wrapper">
@@ -156,12 +150,13 @@ const Step3 = ({ tweetLink, title, url }) => {
         <div className="made-theme">{title}</div>
       </div>
       <a href={url} className="theme-blue">
-        {"https://" + url && window.location.host + url}
+        {url && "https://" + window.location.host + url}
       </a>
       <a href={`https://twitter.com/intent/tweet?text=${tweetText}`}>
-        <div className="link-twitter white-button" onClick={tweetLink}>
-          リンクをツイートするンゴ
-        </div>
+        <div className="link-twitter white-button">リンクをツイートするンゴ</div>
+      </a>
+      <a href={`https://line.me/R/msg/text/?${lineText}`}>
+        <div className="link-line green-button">リンクをLINEのトークに送るンゴ</div>
       </a>
     </body>
   );
