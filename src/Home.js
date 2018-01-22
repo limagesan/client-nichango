@@ -142,7 +142,7 @@ const Step3 = ({ title, url }) => {
   const lineText =
     "「" + title + "」" + "のスレが始まったンゴ " + protocol + window.location.host + url;
   return (
-    <body>
+    <div>
       <div className="img-wrapper">
         <img src="img/logo-2ch_ngo-02.png" className="logo" />
       </div>
@@ -163,6 +163,6 @@ const Step3 = ({ title, url }) => {
       <a href={`https://line.me/R/msg/text/?${lineText}`}>
         <div className="link-line green-button">リンクをLINEで送るンゴ</div>
       </a>
-    </body>
+    </div>
   );
 };

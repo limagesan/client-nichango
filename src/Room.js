@@ -48,12 +48,12 @@ class Room extends Component {
   render() {
     const texts = this.state.texts.map((text, index) => (
       <div key={index} className="comment-container">
-        <div class="comment">{text}</div>
+        <div className="comment">{text}</div>
       </div>
     ));
     return (
       <div className="Room">
-        <div class="theme-timeline">{this.state.title}</div>
+        <div className="theme-timeline">{this.state.title}</div>
         <div className="sweet-loading">
           <BeatLoader loading={this.state.isShowLoading} />
         </div>
@@ -62,16 +62,19 @@ class Room extends Component {
           <form className="fillbox" action="#" onSubmit={this.postText}>
             <div className="col1">
               <input
-                className="question-input"
+                className="text-input"
                 maxLength="15"
                 type="text"
-                name="question"
                 value={this.state.textValue}
                 onChange={this.handleChange}
               />
             </div>
             <div className="col2">
-              <button className="question-button" type="submit">
+              <button
+                className="send-button"
+                type="submit"
+                disabled={this.state.textValue == ""}
+              >
                 送信
               </button>
             </div>

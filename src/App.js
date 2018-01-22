@@ -19,7 +19,8 @@ class App extends Component {
           <div>
             <Switch>
               <Route path="/room/:roomId" component={Room} />
-              <Route path="/" component={Home} />
+              <Route exact path="/" component={Home} />
+              <Redirect to="/" />
             </Switch>
           </div>
         </Router>

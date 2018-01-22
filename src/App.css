@@ -245,12 +245,12 @@ a {
   overflow: hidden;
 }
 
-.question-input {
+.text-input {
   float: left;
   width: 100%;
 }
 
-.question-button {
+.send-button {
   float: left;
   width: 100%;
   white-space: nowrap;
