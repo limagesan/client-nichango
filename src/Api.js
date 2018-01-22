@@ -2,11 +2,14 @@ import axios from "axios";
 
 export default class Api {
   constructor() {
-    // this.baseUrl = "https://localhost";
-    // this.port = 4000;
     this.getTitle = this.getTitle.bind(this);
-    this.baseUrl = "https://backend-nichango.herokuapp.com";
-    this.port = 443;
+    if (process.env.REACT_APP_ENV == "local") {
+      this.baseUrl = "http://localhost";
+      this.port = 4000;
+    } else {
+      this.baseUrl = "https://backend-nichango.herokuapp.com";
+      this.port = 443;
+    }
   }
 
   handleError(e) {

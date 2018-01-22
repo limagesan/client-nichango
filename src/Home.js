@@ -57,7 +57,6 @@ class Home extends Component {
         console.log("[Api: CreateRoom]", res);
         const url = `/room/${res.data.room._id}`;
         this.setState({ url });
-        // this.props.history.push(`/room/${res.roomId}`);
       })
       .catch(err => {
         alert("Failed sign up");
@@ -128,17 +127,20 @@ const Step2 = ({ getTitle, clickNext, title, isRotate }) => {
 };
 
 const Step3 = ({ title, url }) => {
+  const protocol =
+    process.env.REACT_APP_ENV == "local" ? "http://" : "https://";
   const tweetText =
     "「" +
     title +
     "」" +
-    "のスレが始まったンゴ https://" +
+    "のスレが始まったンゴ " +
+    protocol +
     window.location.host +
     url +
     " %23にちゃンゴ";
 
   const lineText =
-    "「" + title + "」" + "のスレが始まったンゴ https://" + window.location.host + url;
+    "「" + title + "」" + "のスレが始まったンゴ " + protocol + window.location.host + url;
   return (
     <body>
       <div className="img-wrapper">
@@ -151,7 +153,7 @@ const Step3 = ({ title, url }) => {
       </div>
       <div className="link-wrapper">
         <a href={url} className="urllink theme-blue">
-          {url && "https://" + window.location.host + url}
+          {url && protocol + window.location.host + url}
         </a>
       </div>
 

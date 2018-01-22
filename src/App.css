@@ -247,7 +247,6 @@ a {
 
 .question-input {
   float: left;
-  /*margin-right: 10px;*/
   width: 100%;
 }
 
@@ -256,15 +255,6 @@ a {
   width: 100%;
   white-space: nowrap;
   text-align: center;
-}
-
-.spinner {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 .rotate-anime {
@@ -279,17 +269,3 @@ a {
     transform: rotate(720deg);
   }
 }
-/*.text-box-typing{
-  width: 300px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 40px;
-  float: left;
-}
-.submit-text{
-  width: 80px;
-  height: 35px;
-  border: 3px solid #fff;
-  color: #ffffff;
-  line-height: 35px;
-}*/

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Api from "./Api";
 import { Button, Input } from "semantic-ui-react";
-import { Spinner } from "spin.js";
 import { BeatLoader } from "react-spinners";
 
 class Room extends Component {
@@ -78,7 +77,6 @@ class Room extends Component {
             </div>
           </form>
         </footer>
-        {/*<textarea id="messageInputBox"  class="msbox" rows="1" maxLength="500" (keyup)="change()" type="text" placeholder="Message ..."></textarea>*/}
       </div>
     );
   }
