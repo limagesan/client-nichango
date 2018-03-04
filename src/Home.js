@@ -123,8 +123,7 @@ const Step2 = ({ getTitle, clickNext, title, isRotate }) => {
 };
 
 const Step3 = ({ title, url }) => {
-  const protocol =
-    process.env.REACT_APP_ENV == "local" ? "http://" : "https://";
+  const protocol = process.env.REACT_APP_ENV == "local" ? "http://" : "http://";
   const tweetText =
     "「" +
     title +
