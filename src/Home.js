@@ -24,7 +24,6 @@ class Home extends Component {
 
   getTitle() {
     this.api.getTitle().then(res => {
-      console.log("gettitle", res);
       this.setState({ title: res.data.title });
     });
   }
@@ -34,12 +33,10 @@ class Home extends Component {
     this.api.getTitle().then(res => {
       this.setState({ isRotate: false });
 
-      console.log("gettitle", res);
       this.setState({ title: res.data.title });
     });
   }
   goStep2() {
-    console.log("yoba");
     this.getTitle();
     this.setState({ step: 2 });
   }
@@ -54,7 +51,6 @@ class Home extends Component {
     this.api
       .createRoom(title)
       .then(res => {
-        console.log("[Api: CreateRoom]", res);
         const url = `/room/${res.data.room._id}`;
         this.setState({ url });
       })

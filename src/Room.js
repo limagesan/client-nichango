@@ -26,7 +26,6 @@ class Room extends Component {
     this.setState({ isShowLoading: true });
     this.api.getRoom(this.props.match.params.roomId).then(res => {
       this.setState({ isShowLoading: false });
-      console.log("getRoom", res);
       this.setState({ title: res.data.room.title, texts: res.data.room.texts });
     });
   }
@@ -36,7 +35,6 @@ class Room extends Component {
 
     const text = this.state.textValue;
     this.api.postText(this.props.match.params.roomId, text).then(res => {
-      console.log("postText res", res);
       this.getRoom();
     });
     this.setState({ textValue: "" });
