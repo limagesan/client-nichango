@@ -61,7 +61,7 @@ class Room extends Component {
             <div className="col1">
               <input
                 className="text-input"
-                maxLength="15"
+                maxLength="100"
                 type="text"
                 value={this.state.textValue}
                 onChange={this.handleChange}
